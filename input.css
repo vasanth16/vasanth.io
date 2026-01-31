@@ -1,2 +1,40 @@
 @import "tailwindcss";
 @source "./*.html";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+a {
+    text-decoration: underline;
+    text-decoration-color: #d1d5db;
+    text-underline-offset: 2px;
+    transition: text-decoration-color 0.15s;
+}
+
+.dark a {
+    text-decoration-color: #4b5563;
+}
+
+a:hover {
+    text-decoration-color: currentColor;
+}
+
+#theme-toggle {
+    cursor: pointer;
+    background: none;
+    border: 1px solid #d1d5db;
+    border-radius: 9999px;
+    padding: 0.5rem;
+    transition: background-color 0.15s, border-color 0.15s;
+}
+
+#theme-toggle:hover {
+    background-color: #f3f4f6;
+}
+
+.dark #theme-toggle {
+    border-color: #4b5563;
+}
+
+.dark #theme-toggle:hover {
+    background-color: #374151;
+}
